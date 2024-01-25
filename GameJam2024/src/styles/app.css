@@ -1,0 +1,9 @@
+.nav-bar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar-wrapper a {
+  margin: 10px;
+}
