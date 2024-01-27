@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
@@ -19,6 +19,11 @@ const Mic = ({ words, setScore, score, decreaseLife, setSentence }) => {
   useEffect(() => {
     SpeechRecognition.startListening({ continuous: true });
   }, [words]);
+
+  useLayoutEffect(()=>{
+    SpeechRecognition.stopListening()
+  })
+
 
   useEffect(() => {
     setNo(no + 1);
