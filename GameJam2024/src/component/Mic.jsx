@@ -25,18 +25,19 @@ const {
     setNo(no+1)
     if(transcript.length>words.length){
       SpeechRecognition.stopListening()
-      let win = true
+      
+      let cnt = 0
       for(let n=0;n<transcript.split(" ").length;n++){
         try{
         if(!words.split(",")[n].includes(transcript.split(" ")[n])){
-          win = false
+          cnt+=1
         }
       }catch(e){
         resetTranscript()
       }
       }
 
-      if(win){
+      if(cnt<3){
         setScore(score+1)
       }else{
         decreaseLife()
