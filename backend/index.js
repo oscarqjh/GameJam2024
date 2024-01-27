@@ -46,7 +46,7 @@ if (port == null || port == "") {
 //Connect to the database before listening
 connectDB().then(() => {
   app.listen(port, () => {
-    console.log("listening for requests");
+    console.log(`Server is running on port ${port}`);
   });
 });
 
