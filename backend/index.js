@@ -55,5 +55,3 @@ const database = mongoose.connection;
 database.on("error", (error) => {
   console.log(error);
 });
-
-export default app;
