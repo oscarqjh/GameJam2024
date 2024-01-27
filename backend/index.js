@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import "dotenv/config";
+import { APIrouter } from "./routes/routes.js";
 
 ///////////////////////////////////////////////// app set-up //////////////////////////////////////////////////
 const app = express();
