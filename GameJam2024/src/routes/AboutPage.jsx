@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/AuthProvider";
 import "../styles/aboutPage.css";
 import NButton from "../component/NButton";
@@ -7,15 +7,11 @@ import { DiGithubBadge } from "react-icons/di";
 
 export default function AboutPage() {
   const { user, logout } = useAuth();
-  const nvg = useNavigate()
+  const nvg = useNavigate();
 
   const handleLogout = () => {
     logout();
   };
-
-  const handleStart = () =>{
-    nvg("/game")
-  }
 
   return (
     <>

@@ -1,15 +1,7 @@
-.about-page-wrapper {
+.leaderboard-page-wrapper {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-button {
-  margin: 10px;
-}
-
-button a {
-  text-decoration: none;
 }
