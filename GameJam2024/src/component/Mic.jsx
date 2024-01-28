@@ -18,12 +18,10 @@ const Mic = ({ words, setScore, score, decreaseLife, setSentence }) => {
   }
   useEffect(() => {
     SpeechRecognition.startListening({ continuous: true });
+    return ()=>SpeechRecognition.stopListening()
   }, [words]);
 
-  useLayoutEffect(()=>{
-    SpeechRecognition.stopListening()
-  })
-
+  
 
   useEffect(() => {
     setNo(no + 1);

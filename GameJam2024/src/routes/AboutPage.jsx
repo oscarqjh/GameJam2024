@@ -7,7 +7,6 @@ import { DiGithubBadge } from "react-icons/di";
 
 export default function AboutPage() {
   const { user, logout } = useAuth();
-  const nvg = useNavigate();
 
   const handleLogout = () => {
     logout();
@@ -19,21 +18,41 @@ export default function AboutPage() {
         <h2>Welcome, {user.name}</h2>
         <h3>To start, read out the words shown</h3>
         <div>
-        <RiSpeakFill fontSize={'15rem'} />
+          <RiSpeakFill fontSize={"15rem"} />
         </div>
-        
-        <NButton onClick={()=>nvg('/game')} label={"Start Game"}></NButton>
+        <Link to={"game"}>
+          <NButton label={"Start Game"}></NButton>
+        </Link>
+
         <NButton onClick={handleLogout} label={"Logout"}></NButton>
         <h4>A game developed for GlobalGameJam 2024</h4>
-        <div style={{display:'flex',justifyContent:'center'}}>
-        <div style={{display:'inline-block'}}>
-          <DiGithubBadge fontSize={'2rem'} style={{display:'inline-block',margin:5,verticalAlign:'top'}}/>
-          <h5 style={{display:'inline-block',verticalAlign:'top'}}>oscarqjh</h5>    
-        </div>
-        <div style={{display:'inline-block'}}>
-          <DiGithubBadge fontSize={'2rem'} style={{display:'inline-block',margin:5,verticalAlign:'top'}}/>
-          <h5 style={{display:'inline-block',verticalAlign:'top'}}>ykIsCoding</h5>
-        </div>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <div style={{ display: "inline-block" }}>
+            <DiGithubBadge
+              fontSize={"2rem"}
+              style={{
+                display: "inline-block",
+                margin: 5,
+                verticalAlign: "top",
+              }}
+            />
+            <h5 style={{ display: "inline-block", verticalAlign: "top" }}>
+              oscarqjh
+            </h5>
+          </div>
+          <div style={{ display: "inline-block" }}>
+            <DiGithubBadge
+              fontSize={"2rem"}
+              style={{
+                display: "inline-block",
+                margin: 5,
+                verticalAlign: "top",
+              }}
+            />
+            <h5 style={{ display: "inline-block", verticalAlign: "top" }}>
+              ykIsCoding
+            </h5>
+          </div>
         </div>
       </div>
     </>

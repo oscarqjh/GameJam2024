@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Mic from "../component/Mic";
 import { Link, useNavigate } from "react-router-dom";
 import NButton from "../component/NButton";
@@ -11,7 +11,7 @@ const GamePage = () => {
   const { user } = useAuth();
   const [score, setScore] = useState(0);
   const [life, setLife] = useState(5);
-  const [seconds,setSeconds]=useState(300)
+  const [seconds, setSeconds] = useState(300);
   const words = ["hehe", "haha", "aha"];
   const nav = useNavigate();
   const [submitted, setSubmitted] = useState(false);
@@ -29,15 +29,17 @@ const GamePage = () => {
     return generateSentence();
   });
 
-  useEffect(()=>{
+  useEffect(() => {
     setTimeout(() => {
-        console.log(seconds)
-        let t = seconds -1
-        setSeconds(t)
+      console.log(seconds);
+      let t = seconds - 1;
+      setSeconds(t);
+      if(seconds<=0){
+        setLife(0)
+      }
     }, 1000);
-  },[seconds])
+  }, [seconds]);
 
-  
   const decreaseLife = () => {
     setLife(life - 1);
   };
@@ -59,20 +61,35 @@ const GamePage = () => {
         Read the words out loud. Repeat them over and over again once you are
         done.
       </h1>
-      <div style={{display:'flex',flex:'row',width:'100%',justifyContent:"space-evenly"}}>
-      <h4 style={{ marginTop:'35px'}}>Life:{life}</h4>
-      <h4 style={{ marginTop:'35px'}}>Score:{score}</h4>
-      <div>
-        <h4 style={{display:'inline-block'}}>Time left:</h4>
-      <Meter style={{display:'inline-block', marginTop:'35px', marginLeft:'5px'}}
-  values={[{
-    value: (seconds/500)*100,
-    label: 'sixty',
-  }]}
-  aria-label="meter"
-/></div>
+      <div
+        style={{
+          display: "flex",
+          flex: "row",
+          width: "100%",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <h4 style={{ marginTop: "35px" }}>Life:{life}</h4>
+        <h4 style={{ marginTop: "35px" }}>Score:{score}</h4>
+        <div>
+          <h4 style={{ display: "inline-block" }}>Time left:</h4>
+          <Meter
+            style={{
+              display: "inline-block",
+              marginTop: "35px",
+              marginLeft: "5px",
+            }}
+            values={[
+              {
+                value: (seconds / 500) * 100,
+                label: "sixty",
+              },
+            ]}
+            aria-label="meter"
+          />
+        </div>
       </div>
-      
+
       <h1>{sentence}</h1>
       {life > 0 ? (
         <Mic
