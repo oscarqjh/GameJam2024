@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "../styles/leaderboardPage.css";
 import { useEffect, useState } from "react";
 import apiService from "../api/apiService";
+import NButton from "../component/NButton";
 export default function LeaderboardPage() {
   const [scoreData, setScoreData] = useState([]);
   const [initialised, setInitialised] = useState(false);
@@ -22,9 +23,11 @@ export default function LeaderboardPage() {
     <>
       <div className="leaderboard-page-wrapper">
         <h1>leaderboard</h1>
-        <button>
-          <Link to={"/user"}>Go Home</Link>
-        </button>
+
+        <Link to={"/user"}>
+          <NButton label={"Go Home"}></NButton>
+        </Link>
+
         {scoreData.map((item, i) => {
           return (
             <h2 key={i}>
