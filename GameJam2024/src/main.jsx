@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import "regenerator-runtime/runtime";
 import ErrorPage from "./routes/ErrorPage";
 import HomePage from "./routes/HomePage";
@@ -13,7 +17,7 @@ import "./styles/index.css";
 import GamePage from "./routes/GamePage";
 import LeaderboardPage from "./routes/LeaderboardPage";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <AuthLayout />,
