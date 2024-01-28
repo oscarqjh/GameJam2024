@@ -81,7 +81,7 @@ const GamePage = () => {
             }}
             values={[
               {
-                value: (seconds / 500) * 100,
+                value: (seconds / 300) * 100,
                 label: "sixty",
               },
             ]}
