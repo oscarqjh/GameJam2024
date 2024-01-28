@@ -13,7 +13,7 @@
 
 
 ## Description
-In line with the theme of "Make Me Laugh", this game taps on the popular notion of "fake it till you make it" and the contagiousness of laughter to allow players and their friends to have a good laugh. Laughter is part of human nature and has been known to be associated with various health benefits (1,2) - such as stress reducation (3) - and even "simulated" laughter can bring about these benefits. This is especially important given that we live in a stressful, fast-paced country like Singapore (3).
+In line with the theme of "Make Me Laugh", this game taps on the popular notion of "fake it till you make it" and the contagiousness of laughter to allow players and their friends to have a good laugh. Laughter is part of human nature and has been known to be associated with various health benefits (1) - such as stress reduction (3) - and even "simulated" laughter can bring about these benefits (2). This is especially important given that we live in a stressful, fast-paced country like Singapore (4).
 
 Our game concept, whilst simple, seeks to serve as a platform on which our players can experience the benefits of laughter.
 
