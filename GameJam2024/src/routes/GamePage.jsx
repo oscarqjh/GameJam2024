@@ -114,14 +114,14 @@ const GamePage = () => {
         <NButton label={"Play Again"} onClick={() => nav(0)}></NButton>
       )}
       {life <= 0 && (
-        <NButton label={"Go Home"}>
-          <Link to={"/user"}></Link>
-        </NButton>
+        <Link to={"/user"}>
+          <NButton label={"Go Home"}></NButton>
+        </Link>
       )}
       {life <= 0 && (
-        <NButton label={"Go to Leaderboard"}>
-          <Link to={"/user/leaderboard"}></Link>
-        </NButton>
+        <Link to={"/user/leaderboard"}>
+          <NButton label={"Go to Leaderboard"}></NButton>
+        </Link>
       )}
     </div>
   );
