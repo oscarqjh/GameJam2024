@@ -34,8 +34,8 @@ const GamePage = () => {
       console.log(seconds);
       let t = seconds - 1;
       setSeconds(t);
-      if(seconds<=0){
-        setLife(0)
+      if (seconds <= 0) {
+        setLife(0);
       }
     }, 1000);
   }, [seconds]);
@@ -104,20 +104,24 @@ const GamePage = () => {
         <h1>Game Over!</h1>
       )}
       {life <= 0 && (
-        <button disabled={submitted} onClick={handleSubmitScore}>
-          {submitted ? "Submitted" : "Submit High Score"}
-        </button>
-      )}
-      {life <= 0 && <button onClick={() => nav(0)}>Play Again</button>}
-      {life <= 0 && (
-        <button>
-          <Link to={"/user"}>Go Home</Link>
-        </button>
+        <NButton
+          label={submitted ? "Submitted" : "Submit High Score"}
+          disabled={submitted}
+          onClick={handleSubmitScore}
+        ></NButton>
       )}
       {life <= 0 && (
-        <button>
-          <Link to={"/user/leaderboard"}>Go to Leaderboard</Link>
-        </button>
+        <NButton label={"Play Again"} onClick={() => nav(0)}></NButton>
+      )}
+      {life <= 0 && (
+        <Link to={"/user"}>
+          <NButton label={"Go Home"}></NButton>
+        </Link>
+      )}
+      {life <= 0 && (
+        <Link to={"/user/leaderboard"}>
+          <NButton label={"Go to Leaderboard"}></NButton>
+        </Link>
       )}
     </div>
   );

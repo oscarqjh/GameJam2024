@@ -24,6 +24,10 @@ export default function AboutPage() {
           <NButton label={"Start Game"}></NButton>
         </Link>
 
+        <Link to={"leaderboard"}>
+          <NButton label={"Leaderboard"}></NButton>
+        </Link>
+
         <NButton onClick={handleLogout} label={"Logout"}></NButton>
         <h4>A game developed for GlobalGameJam 2024</h4>
         <div style={{ display: "flex", justifyContent: "center" }}>
