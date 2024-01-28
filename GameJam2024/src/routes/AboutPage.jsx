@@ -22,7 +22,7 @@ export default function AboutPage() {
         <RiSpeakFill fontSize={'15rem'} />
         </div>
         
-        <NButton onClick={handleStart} label={"Start Game"}></NButton>
+        <NButton onClick={()=>nvg('/game')} label={"Start Game"}></NButton>
         <NButton onClick={handleLogout} label={"Logout"}></NButton>
         <h4>A game developed for GlobalGameJam 2024</h4>
         <div style={{display:'flex',justifyContent:'center'}}>
